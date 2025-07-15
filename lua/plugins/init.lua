@@ -29,7 +29,9 @@ require("lazy").setup({
   {import = "plugins.toggleterm"},
   {import = "plugins.cmp"}, 
   {import = "plugins.rainbow"},
-  {import = "plugins.autoclose"}
+  {import = "plugins.autoclose"},
+  {import = "plugins.tabout"},
+  {import = "plugins.miniMove"}
 })
 
 -- color Scheme catppuccin

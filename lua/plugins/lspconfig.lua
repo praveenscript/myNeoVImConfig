@@ -12,7 +12,7 @@ return {{
     config = function()
         -- Ensure servers are installed
         require("mason-lspconfig").setup({
-            ensure_installed = {"ts_ls", "pyright"}
+            ensure_installed = {"ts_ls", "jsonls"}
         })
 
         -- Setup each LSP server manually
@@ -25,9 +25,11 @@ return {{
           capabilities = capabilities
 
         }) -- JavaScript + TypeScript
-        lspconfig.pyright.setup({ -- Python
+
+        lspconfig.jsonls.setup({
             capabilities = capabilities
         })
+
 
     end
 }}

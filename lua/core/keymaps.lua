@@ -91,6 +91,12 @@ end
 vim.api.nvim_create_user_command("ReloadConfig", ReloadConfig, {})
 
 
+-- Telescope Fuzzy Search workspaces (VS Code style)
+vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "Fuzzy word search" })
+
+
+
+
 
 -- LIve LiveServer
 vim.keymap.set("n", "<leader>ls", ":!live-server .<CR>", { desc = "Start live-server" })
