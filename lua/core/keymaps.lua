@@ -51,31 +51,7 @@ vim.keymap.set("n", "<leader>bd", function()
   vim.cmd("bd " .. bufnr)
 end, { desc = "Delete buffer by number" })
 
--- Changes Between absolute and relative
 
-vim.api.nvim_create_autocmd("CmdlineEnter", {
-  callback = function()
-    vim.schedule(function()
-      vim.opt.relativenumber = false
-    end)
-  end,
-})
-
-vim.api.nvim_create_autocmd("CmdlineLeave", {
-  callback = function()
-    vim.schedule(function()
-      vim.opt.relativenumber = true
-    end)
-  end,
-})
-
-vim.opt.number = true
-
--- To move Lines 
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
 -- Function To reload config
 function _G.ReloadConfig()

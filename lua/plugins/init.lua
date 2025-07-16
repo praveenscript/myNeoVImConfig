@@ -18,20 +18,24 @@ require("lazy").setup({
   { import = "plugins.telescope" },
   { import = "plugins.treesitter" },
   -- Add other plugins...
-  { import = "plugins.session"},
-  { import = "plugins.oil"},
+  { import = "plugins.session" },
+  { import = "plugins.oil" },
   -- { import = "plugins.catppuccin"},
-  {import = "plugins.dashboard"},
-  {import = "plugins.lspconfig"},
-  {import = "plugins.comment"},
-  {import = "plugins.webdevicons"},
-  {import = "plugins.rosepinemoon"},
-  {import = "plugins.toggleterm"},
-  {import = "plugins.cmp"}, 
-  {import = "plugins.rainbow"},
-  {import = "plugins.autoclose"},
-  {import = "plugins.tabout"},
-  {import = "plugins.miniMove"}
+  { import = "plugins.dashboard" },
+  { import = "plugins.lspconfig" },
+  { import = "plugins.comment" },
+  { import = "plugins.webdevicons" },
+  { import = "plugins.rosepinemoon" },
+  { import = "plugins.toggleterm" },
+  { import = "plugins.cmp" },
+  { import = "plugins.rainbow" },
+  { import = "plugins.autoclose" },
+  { import = "plugins.tabout" },
+  { import = "plugins.miniMove" },
+  { import = "plugins.neogit" },
+  { import = "plugins.lualine" },
+  { import = "plugins.treesitter-textObjects" },
+  { import = "plugins.bufferline" }
 })
 
 -- color Scheme catppuccin

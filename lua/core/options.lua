@@ -1,8 +1,15 @@
 -- ~/.config/nvim/lua/core/options.lua
-
-vim.opt.number = true
-vim.opt.relativenumber = true
+print("✅ Loaded core/options.lua")
+-- vim.opt.number = true
+-- vim.opt.relativenumber = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.g.mapleader = ' '
+
+vim.opt.cursorline = true
+
+-- vim.opt.nu = true                 -- Show line numbers
+-- vim.opt.relativenumber = true    -- Use relative numbers (except current line)
+-- vim.o.statuscolumn = "%s %l %r " -- Define custom layout for the gutter
+

@@ -22,6 +22,7 @@ return {
 dashboard.section.buttons.val = {
   dashboard.button("p", "🗂  Projects", ":lua require('utils.project_picker').open()<CR>"),
   dashboard.button("q", "🚪 Quit", ":qa<CR>"),
+  dashboard.button("c", "  Config", ":edit C:\\Users\\prave\\AppData\\Local\\nvim\\lua\\plugins\\init.lua<CR>")
 }
 
     dashboard.section.footer.val = { "Welcome back, Praveen 🚀" }
