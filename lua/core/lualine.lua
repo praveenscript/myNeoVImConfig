@@ -3,7 +3,7 @@ local M = {}
 function M.setup()
   require("lualine").setup({
     options = {
-      theme = "auto", -- picks theme from current colorscheme
+      theme = "dracula", -- picks theme from current colorscheme
       section_separators = { left = "", right = "" },
       component_separators = { left = "", right = "" },
       globalstatus = true, -- single statusline for all windows
