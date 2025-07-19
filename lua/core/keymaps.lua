@@ -17,13 +17,13 @@ vim.keymap.set('n', '<leader>esc', function()
   local wins = vim.api.nvim_list_wins()
   for _, win in ipairs(wins) do
     local config = vim.api.nvim_win_get_config(win)
-    if config.relative ~= '' then  -- Is a floating window
+    if config.relative ~= '' then -- Is a floating window
       vim.api.nvim_win_close(win, false)
     end
   end
 end, { desc = 'Close all plugin UIs' })
 
--- To Reload 
+-- To Reload
 vim.api.nvim_create_user_command("Reload", function()
   -- Clear and reload your keymaps module
   package.loaded["keymaps"] = nil
@@ -69,10 +69,12 @@ vim.api.nvim_create_user_command("ReloadConfig", ReloadConfig, {})
 
 -- Telescope Fuzzy Search workspaces (VS Code style)
 vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "Fuzzy word search" })
+-- Telescope Fuzzy tab search
+vim.keymap.set("n", "<leader>tt", "<cmd>Telescope tabs<CR>", { desc = "Switch Tabs" })
 
 
-
-
+--nvim nvim-tree
+vim.keymap.set("n", "<leader>ft", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
 
 -- LIve LiveServer
 vim.keymap.set("n", "<leader>ls", ":!live-server .<CR>", { desc = "Start live-server" })
@@ -88,3 +90,4 @@ vim.keymap.set("n", "<A-h>", ":vertical resize -5<CR>", { silent = true })
 -- Increase/decrease window height (useful for horizontal splits)
 vim.keymap.set("n", "<A-k>", ":resize +5<CR>", { silent = true })
 vim.keymap.set("n", "<A-j>", ":resize -5<CR>", { silent = true })
+

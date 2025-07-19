@@ -27,6 +27,7 @@ return {
             ["ic"] = "@class.inner",
             ["ab"] = "@block.outer",
             ["ib"] = "@block.inner",
+            ["ar"] = "@conditional.wrapper", -- "around wrapper"
           },
         },
         move = {
@@ -46,4 +47,3 @@ return {
     })
   end
 }
-
