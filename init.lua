@@ -5,6 +5,9 @@ require('core.options')
 require('core.keymaps')
 require('core.autocmds')
 
+
+-- Load if condition for other Env
+require('core.custom')
 -- Load plugin configurations
 require('plugins.init')
 

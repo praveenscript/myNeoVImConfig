@@ -91,3 +91,7 @@ vim.keymap.set("n", "<A-h>", ":vertical resize -5<CR>", { silent = true })
 vim.keymap.set("n", "<A-k>", ":resize +5<CR>", { silent = true })
 vim.keymap.set("n", "<A-j>", ":resize -5<CR>", { silent = true })
 
+-- Clipboard stuff
+
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+
