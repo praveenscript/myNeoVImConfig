@@ -1,5 +1,9 @@
 -- ~/.config/nvim/init.lua
 
+
+-- To check Env
+_G.is_termux = vim.fn.executable("termux-info") == 1 and vim.fn.getenv("PREFIX") == "/data/data/com.termux/files/usr"
+print("Termux detected:", is_termux)
 -- Load core configuration
 require('core.options')
 require('core.keymaps')
