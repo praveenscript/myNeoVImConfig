@@ -92,6 +92,17 @@ vim.keymap.set("n", "<A-k>", ":resize +5<CR>", { silent = true })
 vim.keymap.set("n", "<A-j>", ":resize -5<CR>", { silent = true })
 
 -- Clipboard stuff
-
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+-- Correct Termux pasting problem by disabling formatting when it tries to paste
+local is_termux = vim.g.is_termux  -- assuming you've set this globally elsewhere
+
+vim.keymap.set("n", "<leader>p", function()
+  if is_termux then
+    vim.opt.paste = true
+  end
+  vim.cmd('normal "+p')  -- paste from system clipboard
+  if is_termux then
+    vim.opt.paste = false
+  end
+end, { desc = "Smart paste (Termux-aware)" })
 
