@@ -2,32 +2,42 @@
 return {
   "goolord/alpha-nvim",
   config = function()
-    local alpha = require("alpha")
-    local dashboard = require("alpha.themes.dashboard")
-    local finder = require("utils.project_finder")
+local find_config = require("utils.findConfig")
+local config_path = find_config.get_config_path()
 
-    dashboard.section.header.val = {
-[[     )))]],
-[[    (((]],
-[[  +-----+]],
-[[  |     |}]],
-[[  `-----'    ]],
-[[___________]],
-[[`---------']],
+local alpha = require("alpha")
+local dashboard = require("alpha.themes.dashboard")
+local finder = require("utils.project_finder")
+
+dashboard.section.header.val = {
+  [[     )))]],
+  [[    (((]],
+  [[  +-----+]],
+  [[  |     |}]],
+  [[  `-----'    ]],
+  [[___________]],
+  [[`---------']],
 }
 
-    dashboard.button("p", "🗂  Projects", ":lua require('utils.project_picker').open()<CR>")
-
-
-dashboard.section.buttons.val = {
+-- 💡 Initialize button list before inserting anything
+local buttons = {
   dashboard.button("p", "🗂  Projects", ":lua require('utils.project_picker').open()<CR>"),
   dashboard.button("q", "🚪 Quit", ":qa<CR>"),
-  dashboard.button("c", "  Config", ":edit C:\\Users\\prave\\AppData\\Local\\nvim\\lua\\plugins\\init.lua<CR>")
 }
 
-    dashboard.section.footer.val = { "Welcome back, Praveen 🚀" }
+-- ➕ Conditionally add the config button
+if config_path then
+  table.insert(buttons, dashboard.button("c", "  Config", ":edit " .. config_path .. "<CR>"))
+else
+  table.insert(buttons, dashboard.button("c", "  Config", ":echo 'Config not found'<CR>"))
+end
 
+-- ✅ Apply the button list
+dashboard.section.buttons.val = buttons
 
-    alpha.setup(dashboard.config)
+dashboard.section.footer.val = { "Welcome back, Praveen 🚀" }
+
+alpha.setup(dashboard.config)
+
   end,
 }
