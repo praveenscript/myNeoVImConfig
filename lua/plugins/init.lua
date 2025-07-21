@@ -21,7 +21,7 @@ require("lazy").setup({
   { import = "plugins.session" },
   { import = "plugins.oil" },
   -- { import = "plugins.catppuccin"},
-  { import = "plugins.dashboard" },
+  { import = "dashboard.dashboard" },
   { import = "plugins.lspconfig" },
   { import = "plugins.comment" },
   { import = "plugins.webdevicons" },

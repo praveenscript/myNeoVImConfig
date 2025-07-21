@@ -3,6 +3,7 @@ return {
   "goolord/alpha-nvim",
   config = function()
 local find_config = require("utils.findConfig")
+local quote = require("dashboard.quoteLoader").get_random_quote()
 local config_path = find_config.get_config_path()
 
 local alpha = require("alpha")
@@ -17,6 +18,11 @@ dashboard.section.header.val = {
   [[  `-----'    ]],
   [[___________]],
   [[`---------']],
+}
+dashboard.section.quote = {
+  type = "text",
+  val = quote,
+  opts = { position = "center", hl = "Comment" },
 }
 
 -- 💡 Initialize button list before inserting anything
@@ -35,7 +41,8 @@ end
 -- ✅ Apply the button list
 dashboard.section.buttons.val = buttons
 
-dashboard.section.footer.val = { "Welcome back, Praveen 🚀" }
+-- dashboard.section.footer.val = { "Welcome back, Praveen 🚀" }
+dashboard.section.footer.val = quote
 
 alpha.setup(dashboard.config)
 
