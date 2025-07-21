@@ -20,10 +20,22 @@ require('utils.line_mode')
 require('utils.comments')
 require('utils.cursorJump')
 
--- Shell 
--- if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
---   vim.opt.shell = '"C:\\Program Files\\Git\\usr\\bin\\bash.exe"'
+-- Speed PasteLine >> 
+require('utils.speedPaste')
+-- Telescope Speed Paster Picker
+require('utils.telescopePaste')
 
--- end
+-- To reload
+function _G.ReloadConfig()
+  for name, _ in pairs(package.loaded) do
+    if name:match("^core") then
+      package.loaded[name] = nil
+    end
+  end
+  dofile(vim.env.MYVIMRC)
+  vim.notify("Neovim config reloaded!", vim.log.levels.INFO)
+end
+
+vim.keymap.set("n", "<leader><CR>", "<cmd>lua ReloadConfig()<CR>", { noremap = true, silent = true })
 
 

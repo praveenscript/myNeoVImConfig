@@ -36,7 +36,10 @@ require("lazy").setup({
   { import = "plugins.lualine" },
   { import = "plugins.treesitter-textObjects" },
   { import = "plugins.bufferline" },
-  { import = "plugins.mini-line"}
+  { import = "plugins.mini-line"},
+  -- { import = "plugins.helpers_plugin"}
+  {import = "plugins.indent-blankline"},
+  {import = "plugins.diffview"}
 })
 
 -- color Scheme catppuccin

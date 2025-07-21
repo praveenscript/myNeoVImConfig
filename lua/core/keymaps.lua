@@ -53,18 +53,8 @@ end, { desc = "Delete buffer by number" })
 
 
 
--- Function To reload config
-function _G.ReloadConfig()
-  for name, _ in pairs(package.loaded) do
-    if name:match("^core") or name:match("^plugins") then
-      package.loaded[name] = nil
-    end
-  end
-  dofile(vim.env.MYVIMRC)
-  print("🔄 Reloaded core and plugin modules!")
-end
 
-vim.api.nvim_create_user_command("ReloadConfig", ReloadConfig, {})
+
 
 
 -- Telescope Fuzzy Search workspaces (VS Code style)
@@ -105,4 +95,17 @@ vim.keymap.set("n", "<leader>p", function()
     vim.opt.paste = false
   end
 end, { desc = "Smart paste (Termux-aware)" })
+
+-- Telescope To open Recent files
+vim.keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", {
+  desc = "Find recently opened files"
+})
+
+-- Telescope to open hidden files
+vim.keymap.set("n", "<leader>fh", "<cmd>Telescope find_files hidden=true no_ignore=true<CR>", {
+  desc = "Find hidden files"
+})
+
+-- Telescope Helpers Switch Menu
+vim.keymap.set("n", "<leader>ii", "<cmd>IBLToggle<cr>", { desc = "Toggle indent guides" })
 
