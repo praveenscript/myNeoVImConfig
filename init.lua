@@ -23,7 +23,7 @@ require('utils.cursorJump')
 -- Speed PasteLine >> 
 require('utils.speedPaste')
 -- Telescope Speed Paster Picker
-require('utils.telescopePaste')
+require('mytelescope.telescopePaste')
 
 -- To reload
 function _G.ReloadConfig()

@@ -24,6 +24,9 @@ return {
     local builtin = require('telescope.builtin')
     -- Loading Telescope Custom Made features
     require('mytelescope.splits')
+    
+-- Telescope Speed Paster Picker
+require('mytelescope.telescopePaste')
 
     -- vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find Files' })
 
