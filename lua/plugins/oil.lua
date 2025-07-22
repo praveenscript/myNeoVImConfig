@@ -7,4 +7,8 @@ return {
       show_hidden = true, -- ✨ show dotfiles like .env, .gitignore etc.
     },
   },
+    config = function()
+      require('myoil.replaceBuffer')
+    end,
+
 }

@@ -84,13 +84,13 @@ vim.keymap.set("n", "<A-j>", ":resize -5<CR>", { silent = true })
 -- Clipboard stuff
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 -- Correct Termux pasting problem by disabling formatting when it tries to paste
-local is_termux = vim.g.is_termux  -- assuming you've set this globally elsewhere
+local is_termux = vim.g.is_termux -- assuming you've set this globally elsewhere
 
 vim.keymap.set("n", "<leader>p", function()
   if is_termux then
     vim.opt.paste = true
   end
-  vim.cmd('normal "+p')  -- paste from system clipboard
+  vim.cmd('normal "+p') -- paste from system clipboard
   if is_termux then
     vim.opt.paste = false
   end
@@ -105,7 +105,11 @@ vim.keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", {
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope find_files hidden=true no_ignore=true<CR>", {
   desc = "Find hidden files"
 })
-
--- Telescope Helpers Switch Menu
+-- Toggles indent on/off
 vim.keymap.set("n", "<leader>ii", "<cmd>IBLToggle<cr>", { desc = "Toggle indent guides" })
 
+-- Telescope to open splits
+vim.keymap.set("n", "<leader>sh", function() SplitWithBufferPicker("horizontal") end,
+  { desc = "Split Horizontally with Buffer Picker" })
+vim.keymap.set("n", "<leader>sv", function() SplitWithBufferPicker("vertical") end,
+  { desc = "Split Vertically with Buffer Picker" })

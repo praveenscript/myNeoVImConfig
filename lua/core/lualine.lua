@@ -1,6 +1,19 @@
 local M = {}
 
+
+
+
 function M.setup()
+  local function lsp_status()
+  local clients = vim.lsp.get_active_clients({ bufnr = vim.api.nvim_get_current_buf() })
+  if #clients == 0 then return "🛑 No LSP" end
+  local names = {}
+  for _, client in ipairs(clients) do
+    table.insert(names, client.name)
+  end
+  return "🚀 " .. table.concat(names, ", ")
+end
+
   require("lualine").setup({
     options = {
       theme = "dracula", -- picks theme from current colorscheme
@@ -17,7 +30,7 @@ function M.setup()
         symbols = { modified = "[+]", readonly = "[RO]", unnamed = "[No Name]" },
       } },
       lualine_x = { "encoding", "fileformat", "filetype" },
-      lualine_y = { "progress" },
+      lualine_y = { "progress", lsp_status },
       lualine_z = { { "location", icon = "" } },
     },
     inactive_sections = {

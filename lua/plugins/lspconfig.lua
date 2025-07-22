@@ -12,8 +12,18 @@ return {{
     config = function()
         -- Ensure servers are installed
         require("mason-lspconfig").setup({
-            ensure_installed = {"ts_ls", "jsonls"}
+            ensure_installed = {"ts_ls", "jsonls"},
+
         })
+
+        require("mason-lspconfig").setup_handlers({
+  function(server_name)
+    require("lspconfig")[server_name].setup({
+      capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    })
+  end,
+})
+
 
         -- Setup each LSP server manually
         local lspconfig = require("lspconfig")
@@ -21,14 +31,14 @@ return {{
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 
-        lspconfig.ts_ls.setup({
-          capabilities = capabilities
+        -- lspconfig.ts_ls.setup({
+        --   capabilities = capabilities
 
-        }) -- JavaScript + TypeScript
+        -- }) -- JavaScript + TypeScript
 
-        lspconfig.jsonls.setup({
-            capabilities = capabilities
-        })
+        -- lspconfig.jsonls.setup({
+        --     capabilities = capabilities
+        -- })
 
 
     end
