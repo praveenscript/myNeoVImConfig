@@ -1,6 +1,6 @@
 return {
   'stevearc/oil.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' }, -- icon support
+  dependencies = { 'mini.icons' }, -- icon support
   lazy = false, -- recommended to keep eager
   opts = {
     view_options = {

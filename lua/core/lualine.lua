@@ -5,7 +5,7 @@ local M = {}
 
 function M.setup()
   local function lsp_status()
-  local clients = vim.lsp.get_active_clients({ bufnr = vim.api.nvim_get_current_buf() })
+  local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
   if #clients == 0 then return "🛑 No LSP" end
   local names = {}
   for _, client in ipairs(clients) do
