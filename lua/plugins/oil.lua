@@ -8,6 +8,7 @@ return {
     },
   },
     config = function()
+      require('oil').setup()
       require('myoil.replaceBuffer')
     end,
 
