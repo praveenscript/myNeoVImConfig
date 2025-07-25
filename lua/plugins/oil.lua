@@ -1,6 +1,6 @@
 return {
   'stevearc/oil.nvim',
-  dependencies = { 'mini.icons' }, -- icon support
+  dependencies = { 'mini.icons/nvim-web-devicons' }, -- icon support
   lazy = false, -- recommended to keep eager
   opts = {
     view_options = {
@@ -10,6 +10,7 @@ return {
     config = function()
       require('oil').setup()
       require('myoil.replaceBuffer')
+      require('myoil.keymaps')
     end,
 
 }

@@ -13,7 +13,7 @@ return {
       styles = {
         bold = true,
         italic = false,
-        transparency = false, -- set to true if using a transparent terminal
+        transparency = true, -- set to true if using a transparent terminal
       },
 
       highlight_groups = {
@@ -25,3 +25,4 @@ return {
     vim.cmd("colorscheme rose-pine")
   end,
 }
+

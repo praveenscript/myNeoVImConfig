@@ -16,13 +16,17 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- List your plugins here, or require separate files
   { import = "plugins.telescope" },
+  { import = "plugins.telescope-browser" },
+  { import = "plugins.telescope-fzf-native"},
   { import = "plugins.treesitter" },
   -- Add other plugins...
   { import = "plugins.session" },
   { import = "plugins.oil" },
   -- { import = "plugins.catppuccin"},
   { import = "dashboard.dashboard" },
+  -- For LSP Managements
   { import = "plugins.lspconfig" },
+  { import = "plugins.csharplsp" },
   { import = "plugins.comment" },
   { import = "plugins.webdevicons" },
   { import = "plugins.rosepinemoon" },
@@ -42,7 +46,7 @@ require("lazy").setup({
   { import = "plugins.diffview" },
 
   -- Mini plugins
-  { import = "miniPlugins.mini-ai"}
+  { import = "miniPlugins.mini-ai" }
 })
 
 -- color Scheme catppuccin

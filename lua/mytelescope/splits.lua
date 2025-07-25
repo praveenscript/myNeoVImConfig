@@ -1,3 +1,8 @@
+-- Telescope to open splits
+vim.keymap.set("n", "<leader>sh", function() SplitWithBufferPicker("horizontal") end,
+  { desc = "Split Horizontally with Buffer Picker" })
+vim.keymap.set("n", "<leader>sv", function() SplitWithBufferPicker("vertical") end,
+  { desc = "Split Vertically with Buffer Picker" })
 local builtin = require("telescope.builtin")
 
 function SplitWithBufferPicker(direction)
