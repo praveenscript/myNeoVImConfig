@@ -6,7 +6,8 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.prettier.with({
-					extra_args = { "--use-tabs", "--tab-width", "8" },
+					filetypes = { "javascript", "typescript", "python" },
+					extra_args = { "--use-tabs", "--tab-width", "8", "--print-width", "120" },
 				}),
 				null_ls.builtins.formatting.black,
 				null_ls.builtins.formatting.stylua,
@@ -14,4 +15,3 @@ return {
 		})
 	end,
 }
-

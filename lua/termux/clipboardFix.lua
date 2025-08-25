@@ -10,3 +10,8 @@ vim.keymap.set("n", "<leader>p", function()
 		vim.opt.paste = false
 	end
 end, { desc = "Smart paste (Termux-aware)" })
+
+vim.keymap.set("n", "<leader>y", '"+yy', { desc = "Copy line to clipboard", noremap = true, silent = true })
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy selection to clipboard", noremap = true, silent = true })
+
+vim.keymap.set("i", "<M-S-p>", '<C-R><C-+>', { desc = "Paste system clipboard (insert mode)" })
