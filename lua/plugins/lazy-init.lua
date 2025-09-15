@@ -30,7 +30,7 @@ require("lazy").setup({
 	{ import = "plugins.lspconfig" },
 	{ import = "plugins.csharplsp" },
 	-- For Debuggers
-	{ import = "plugins.debugger" },
+	-- { import = "plugins.debugger" },
 	{ import = "plugins.comment" },
 	{ import = "plugins.webdevicons" },
 	{ import = "plugins.rosepinemoon" },
@@ -47,6 +47,10 @@ require("lazy").setup({
 	{ import = "plugins.treesitter-textObjects" },
 	{ import = "plugins.bufferline" },
 	{ import = "plugins.mini-line" },
+	-- Navigations
+	{import = "plugins.before"},
+	{import = "plugins.flash"},
+	{import = "plugins.import"},
 	-- { import = "plugins.helpers_plugin"}
 
 	{ import = "plugins.indent-blankline" },

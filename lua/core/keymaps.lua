@@ -21,4 +21,19 @@ vim.keymap.set("n", "<A-j>", ":resize -5<CR>", { silent = true })
 -- Toggles indent on/off
 vim.keymap.set("n", "<leader>ii", "<cmd>IBLToggle<cr>", { desc = "Toggle indent guides" })
 
+-- function wrappers
+vim.keymap.set("n", "<leader>wf", function()
+  local word = vim.fn.expand("<cword>")
+  local func = vim.fn.input("Function: ")
+  local wrapped = func .. "(" .. word .. ")"
+  vim.api.nvim_set_current_line(
+    vim.fn.getline("."):gsub(word, wrapped, 1)
+  )
+  -- Move cursor to just after the function name and open insert mode
+  local col = vim.fn.col(".")
+  vim.cmd("normal! 0")
+  vim.cmd("normal! /" .. func .. "<CR>")
+  vim.cmd("normal! f(i")
+end, { noremap = true, silent = true })
+
 

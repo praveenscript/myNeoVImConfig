@@ -20,6 +20,10 @@ require("core.formatting")
 -- config debugging
 require("utils.lspConfig")
 
+
+-- git Extra stuff
+require("gitLame.init").setup()
+
 -- myPlugins dev work
 require("zipper.init")
 require("zipper.core")
