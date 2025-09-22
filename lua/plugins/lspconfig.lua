@@ -18,6 +18,44 @@ return {
 			"williamboman/mason.nvim",
 			"neovim/nvim-lspconfig",
 		},
+
+		opts = {
+			ensure_installed = { "css-lsp" }, -- Optional: auto-install via Mason
+			handlers = {
+				function(server_name)
+					require("lspconfig")[server_name].setup({})
+				end,
+				cssls = function()
+					require("lspconfig").cssls.setup({
+						cmd = { "vscode-css-language-server", "--stdio" },
+						filetypes = { "css", "scss", "less" },
+						settings = {
+							css = { validate = true },
+							scss = { validate = true },
+							less = { validate = true },
+						},
+					})
+				end,
+			},
+    servers = {
+      emmet_ls = {
+        filetypes = {
+          "html", "css", "javascript", "javascriptreact",
+          "typescript", "typescriptreact", "svelte", "vue", "tsx", "jsx"
+        },
+        init_options = {
+          html = {
+            options = {
+              ["bem.enabled"] = true, -- Optional: enable BEM-style expansions
+            },
+          },
+        },
+      },
+    },
+
+
+		},
+
 		config = function()
 			-- Install servers with Mason
 			require("mason-lspconfig").setup({
