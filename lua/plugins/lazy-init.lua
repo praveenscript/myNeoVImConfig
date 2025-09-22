@@ -15,6 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	-- List your plugins here, or require separate files
+	-- For webDevelopment
+	{ import = "plugins.autoclose-tag" },
 	{ import = "plugins.telescope" },
 	{ import = "plugins.lazyGit" },
 	-- { import = "plugins.telescope-browser" },
@@ -48,9 +50,9 @@ require("lazy").setup({
 	{ import = "plugins.bufferline" },
 	{ import = "plugins.mini-line" },
 	-- Navigations
-	{import = "plugins.before"},
-	{import = "plugins.flash"},
-	{import = "plugins.import"},
+	{ import = "plugins.before" },
+	{ import = "plugins.flash" },
+	{ import = "plugins.import" },
 	-- { import = "plugins.helpers_plugin"}
 
 	{ import = "plugins.indent-blankline" },
@@ -61,7 +63,7 @@ require("lazy").setup({
 
 	-- Mini plugins
 	{ import = "miniPlugins.mini-ai" },
-	{ import = "plugins.mini-files"}
+	{ import = "plugins.mini-files" },
 })
 
 -- color Scheme catppuccin
