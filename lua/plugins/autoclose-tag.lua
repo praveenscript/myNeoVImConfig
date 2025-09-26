@@ -1,10 +1,15 @@
-require("nvim-ts-autotag").setup({
-	opts = {
-		enable_close = true, -- auto-close tags
-		enable_rename = true, -- auto-rename paired tags
-		enable_close_on_slash = false, -- optional: close on trailing </
-	},
-	per_filetype = {
-		["html"] = { enable_close = false }, -- override per filetype
-	},
-})
+return {
+  "windwp/nvim-ts-autotag",
+  event = { "BufReadPre", "BufNewFile" },
+  opts = {
+    opts = {
+      enable_close = true,         -- Auto close tags
+      enable_rename = true,        -- Auto rename paired tags
+      enable_close_on_slash = false, -- Optional: auto close on trailing </
+    },
+    -- Optional: override behavior per filetype
+    per_filetype = {
+      html = { enable_close = false }, -- Example override
+    },
+  },
+}

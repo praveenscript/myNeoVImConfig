@@ -12,6 +12,8 @@ require("core.options")
 require("core.keymaps")
 require("core.autocmds")
 
+
+
 -- Load shit idk what even is
 -- Add your plugin path to runtime during dev
 -- Formatters

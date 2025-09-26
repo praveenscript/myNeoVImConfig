@@ -20,6 +20,8 @@ return {
           { name = "nvim_lsp" },
           { name = "buffer" },
           { name = "path" },
+{ "ray-x/cmp-treesitter" },
+         { name = "treesitter" }, 
         },
         snippet = {
           expand = function(args)

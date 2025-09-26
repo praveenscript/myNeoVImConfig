@@ -37,21 +37,33 @@ return {
 					})
 				end,
 			},
-    servers = {
-      emmet_ls = {
-        filetypes = {
-          "html", "css", "javascript", "javascriptreact",
-          "typescript", "typescriptreact", "svelte", "vue", "tsx", "jsx"
-        },
-        init_options = {
-          html = {
-            options = {
-              ["bem.enabled"] = true, -- Optional: enable BEM-style expansions
-            },
-          },
-        },
-      },
-    },
+			servers = {
+
+				html = {
+					cmd = { "vscode-html-language-server", "--stdio" },
+					filetypes = { "html" },
+					init_options = {
+						configurationSection = { "html", "css", "javascript" },
+						embeddedLanguages = {
+							css = true,
+							javascript = true,
+						},
+					},
+				},
+				emmet_ls = {
+					filetypes = {
+						"html", "css", "javascript", "javascriptreact",
+						"typescript", "typescriptreact", "svelte", "vue", "tsx", "jsx"
+					},
+					init_options = {
+						html = {
+							options = {
+								["bem.enabled"] = true, -- Optional: enable BEM-style expansions
+							},
+						},
+					},
+				},
+			},
 
 
 		},

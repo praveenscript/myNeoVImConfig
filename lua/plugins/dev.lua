@@ -38,5 +38,9 @@ return {
   config = function()
     require("lab").setup()
   end,
+},
+{
+  "nvim-lua/plenary.nvim",
+  lazy = true
 }
 }

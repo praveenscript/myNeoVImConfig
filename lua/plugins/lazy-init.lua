@@ -14,11 +14,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	-- My Own Plugins LOl
+	{import = "plugins.idleCLock"},
 	-- List your plugins here, or require separate files
+	-- For WebCodeBases
+	{import = "plugins.meow-yarn"},
 	-- For webDevelopment
+	{import = "plugins.nvim-html-css"},
 	{ import = "plugins.autoclose-tag" },
 	{ import = "plugins.telescope" },
 	{ import = "plugins.lazyGit" },
+	{ import = "plugins.alternate-toggle"},
 	-- { import = "plugins.telescope-browser" },
 	{ import = "plugins.telescope-fzf-native" },
 	{ import = "plugins.treesitter" },
