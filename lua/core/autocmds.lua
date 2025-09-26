@@ -81,3 +81,39 @@ end
 vim.api.nvim_create_user_command("AutoSaveStart", StartConditionalAutosave, {})
 vim.api.nvim_create_user_command("AutoSaveStop", StopConditionalAutosave, {})
 
+
+
+vim.api.nvim_create_user_command("KeyDebug", function()
+  -- Create a scratch buffer
+  local buf = vim.api.nvim_create_buf(false, true)
+  vim.api.nvim_buf_set_option(buf, "buftype", "nofile")
+  vim.api.nvim_buf_set_option(buf, "bufhidden", "wipe")
+  vim.api.nvim_buf_set_option(buf, "swapfile", false)
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, { "🔍 KeyDebug: Press keys to log them here…" })
+
+  -- Open in a floating window
+  local win = vim.api.nvim_open_win(buf, true, {
+    relative = "editor",
+    width = 60,
+    height = 10,
+    row = 2,
+    col = 10,
+    style = "minimal",
+    border = "rounded",
+  })
+
+  -- Start listening to keys
+  local ns = vim.api.nvim_create_namespace("KeyDebug")
+  vim.on_key(function(key)
+    local line = string.format("Pressed: %q", key)
+    vim.api.nvim_buf_set_lines(buf, -1, -1, false, { line })
+  end, ns)
+
+  -- Stop listening when buffer is closed
+  vim.api.nvim_create_autocmd("BufWipeout", {
+    buffer = buf,
+    callback = function()
+      vim.on_key(nil, ns)
+    end,
+  })
+end, {})

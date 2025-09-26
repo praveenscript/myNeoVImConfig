@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- My Own Plugins LOl
 	{import = "plugins.idleCLock"},
+	{import = "plugins.splits"},
 	-- List your plugins here, or require separate files
 	-- For WebCodeBases
 	{import = "plugins.meow-yarn"},
