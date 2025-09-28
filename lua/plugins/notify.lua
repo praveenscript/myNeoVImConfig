@@ -1,11 +1,12 @@
-return {
-	"rcarriga/nvim-notify",
-	config = function()
-		require("notify").setup({
-			stages = "fade_in_slide_out",
-			background_colour = "FloatShadow",
-			timeout = 3000,
-		})
-		vim.notify = require("notify")
-	end,
-}
+return-- lazy.nvim
+{
+  "folke/snacks.nvim",
+  ---@type snacks.Config
+  opts = {
+    notifier = {
+      -- your notifier configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  }
+} 

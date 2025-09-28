@@ -69,7 +69,7 @@ require("lazy").setup({
 	-- { import = "plugins.helpers_plugin"}
 
 	{ import = "plugins.indent-blankline" },
-	{ import = "plugins.none" },
+	-- { import = "plugins.none" },
 	{ import = "plugins.diffview" },
 	{ import = "plugins.nvim-spectre" },
 	{ import = "plugins.nvim-dbview" },

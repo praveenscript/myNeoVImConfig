@@ -6,11 +6,11 @@ return {
       -- Default config, but you can customize pairs, escape behavior, etc.
       keys = {
         -- Add a custom pair: dollar signs for markdown/LaTeX
-        ["$"] = {
-          escape = true,
-          close = true,
-          pair = "$$",
-        },
+        -- ["$"] = {
+        --   escape = true,
+        --   close = true,
+        --   pair = "$$",
+        -- },
         -- Or override built-ins, like disabling single quotes
         ["'"] = {
           escape = false,
@@ -18,7 +18,7 @@ return {
         },
       },
       options = {
-        disabled_filetypes = { "TelescopePrompt", "neo-tree", "lazy" },
+        disabled_filetypes = { "fzf", "neo-tree", "lazy" },
       },
     })
   end,

@@ -1,3 +1,4 @@
+-- lua/dashboard/quotes.lua
 local M = {}
 
 function M.get_random_quote()
@@ -15,3 +16,4 @@ function M.get_random_quote()
 end
 
 return M
+

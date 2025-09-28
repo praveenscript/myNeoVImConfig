@@ -23,40 +23,11 @@ require("core.formatting")
 require("utils.lspConfig")
 
 
--- git Extra stuff
-require("gitLame.init").setup()
 
--- myPlugins dev work
-require("zipper.init")
-require("zipper.core")
-require("zipper.float")
-vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = "*.lua",
-	group = vim.api.nvim_create_augroup("ReloadLuaConfig", { clear = true }),
-	callback = function()
-		local filename = vim.api.nvim_buf_get_name(0)
-		local config_path = vim.fn.stdpath("config") .. "/lua/"
-		local normalized_filename = filename:gsub("\\", "/"):lower()
-		local normalized_config = config_path:gsub("\\", "/"):lower()
-
-		print("BufWritePost triggered for:", normalized_filename)
-
-		if normalized_filename:find(normalized_config, 1, true) then
-			vim.schedule(function()
-				vim.cmd("luafile " .. vim.fn.fnameescape(filename))
-				vim.notify("Reloaded: " .. vim.fn.fnamemodify(filename, ":~"), vim.log.levels.INFO)
-			end)
-		else
-			print("Skipped reload: not in config path")
-		end
-	end,
-})
--- Paths Setup for projects/download and other folders
-vim.api.nvim_create_user_command("Setup", function()
-	require("profiles.profile").setup()
-end, {})
-
--- Telescope
+-- Fzf 
+require("fzf.commander")
+require("fzf.fzf-keymaps")
+require("fzf.fzfPaste")
 
 require("core.custom")
 -- Load plugin configurations
@@ -71,8 +42,7 @@ require("utils.cursorJump")
 -- Speed PasteLine >>
 require("utils.speedPaste")
 require("utils.stashPeek")
--- Telescope Speed Paster Picker
--- require('mytelescope.teleportation')
+
 -- For Termux
 require("termux.clipboardFix")
 -- To reload
