@@ -20,6 +20,7 @@ require("lazy").setup({
 	-- List your plugins here, or require separate files
 	-- For WebCodeBases
 	{import = "plugins.meow-yarn"},
+	{import = "plugins.arrow-navigation"},
 	-- For webDevelopment
 	{import = "plugins.nvim-html-css"},
 	{ import = "plugins.autoclose-tag" },
@@ -29,7 +30,7 @@ require("lazy").setup({
 	-- For Speed
 	{import = "plugins.luaSnip"},
 	{import = "plugins.fzf"},
-	{import = "plugins.inputSnacks"},
+	-- {import = "plugins.inputSnacks"},
 	{ import = "plugins.lazyGit" },
 	{ import = "plugins.alternate-toggle"},
 	-- { import = "plugins.telescope-browser" },
@@ -39,7 +40,8 @@ require("lazy").setup({
 	{ import = "plugins.persistence" },
 	{ import = "plugins.oil" },
 	-- { import = "plugins.catppuccin"},
-	{ import = "dashboard.dashboard" },
+	-- { import = "dashboard.dashboard" },
+	{import = "plugins.snacks"},
 	{ import = "plugins.notify" },
 	-- For LSP Managements
 	{ import = "plugins.lspconfig" },

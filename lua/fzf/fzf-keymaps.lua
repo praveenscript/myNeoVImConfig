@@ -25,8 +25,7 @@ kmap("n", "<leader>fh", function()
   require("fzf-lua").help_tags()
 end, { desc = "Help Tags" })
 
--- 🔔 Find Notifications (requires notify extension)
-kmap("n", "<leader>ft", function()
-  require("fzf-lua").extensions.notify.notify()
-end, { desc = "Find Notifications" })
-
+-- Assuming snacks.nvim is already loaded and configured
+vim.keymap.set("n", "<Space><Space>", function()
+  require("snacks.picker").smart()
+end, { desc = "Snacks Smart Picker" })
