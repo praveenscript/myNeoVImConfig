@@ -1,15 +1,6 @@
--- Telescope Fuzzy Search workspaces (VS Code style)
--- print("From Telescope Keymaps")
-
 local kmap = vim.keymap.set
 
--- kmap("n", "<leader>ff", function()
--- 	require("telescope.builtin").find_files({
--- 		cwd =
--- 	})
--- end, {
--- 	desc = "Searchs all files",
--- })
+
 
 local builtin = require('telescope.builtin')
 kmap('n', '<leader>lg', builtin.live_grep, {

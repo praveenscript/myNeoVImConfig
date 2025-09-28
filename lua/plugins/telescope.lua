@@ -19,9 +19,9 @@ return {
 			require('mytelescope.splits'),
 
 			-- Telescope some extra shit I've made up
-			require('mytelescope.telescopePaste'),
+			require('lua.fzf.telescopePaste'),
 			require('mytelescope.DynamicFileTransfer'),
-			require('mytelescope.telescopeKeymaps'),
+			require('lua.fzf.fzf-keymaps'),
 			require('mytelescope.findFiles'),
 			defaults = {
 				mappings = {
