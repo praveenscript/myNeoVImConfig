@@ -2,7 +2,8 @@
 -- Important
 vim.g.mapleader = " "
 
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = "\\" -- Local leader (e.g. <localleader>r for Grug-FAR)
+
 
 -- To check Env
 _G.is_termux = vim.fn.executable("termux-info") == 1 and vim.fn.getenv("PREFIX") == "/data/data/com.termux/files/usr"

@@ -29,3 +29,8 @@ end, { desc = "Help Tags" })
 vim.keymap.set("n", "<Space><Space>", function()
   require("snacks.picker").smart()
 end, { desc = "Snacks Smart Picker" })
+
+vim.keymap.set("n", "<leader>ft", function()
+  require("snacks.picker").notifications()
+end, { desc = "Snacks: Notification History" })
+
