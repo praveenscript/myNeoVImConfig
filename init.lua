@@ -57,13 +57,11 @@ vim.api.nvim_create_user_command("Setup", function()
 end, {})
 
 -- Telescope
-require("mytelescope.main")
 
 require("core.custom")
 -- Load plugin configurations
 require("plugins.lazy-init")
 -- Load Commander
-require("mytelescope.Commander")
 -- Load LineNumber configurations
 require("utils.line_mode")
 require("utils.comments")

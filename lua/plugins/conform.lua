@@ -11,5 +11,9 @@ return{
     -- Conform will run the first available formatter
     javascript = { "prettierd", "prettier", stop_after_first = true },
   },
-
+{
+  "nmac427/guess-indent.nvim",
+  opts = {}, -- auto setup on BufRead
+  event = { "BufReadPre", "BufNewFile" },
+}
 } 
