@@ -3,9 +3,30 @@
 local keymap = vim.keymap.set
 
 -- Keymaps for workspace management
-vim.keymap.set("n", "<leader>{", "<cmd>Telescope session-lens search_session<CR>", {
-  desc = "Search workspaces (VS Code style)"
-})
+vim.keymap.set("n", "<leader>{", function()
+  local persistence = require("persistence")
+  local Path = require("plenary.path")
+
+  local session_dir = persistence.options.dir
+  local session_files = vim.fn.glob(session_dir .. "/*.json", true, true)
+
+  local entries = {}
+  for _, file in ipairs(session_files) do
+    local path = Path:new(file)
+    table.insert(entries, path:make_relative(session_dir))
+  end
+
+  require("fzf-lua").fzf_exec(entries, {
+    prompt = "🗂️ Load Session > ",
+    actions = {
+      ["default"] = function(selected)
+        local session_name = selected[1]
+        local full_path = session_dir .. "/" .. session_name
+        persistence.load({ session = full_path })
+      end,
+    },
+  })
+end, { desc = "Search workspaces (persistence.nvim)" })
 
 -- LIve LiveServer
 vim.keymap.set("n", "<leader>ls", ":!live-server .<CR>", { desc = "Start live-server" })

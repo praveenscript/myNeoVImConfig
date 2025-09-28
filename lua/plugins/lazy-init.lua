@@ -23,7 +23,7 @@ require("lazy").setup({
 	-- For webDevelopment
 	{import = "plugins.nvim-html-css"},
 	{ import = "plugins.autoclose-tag" },
-	{ import = "plugins.telescope" },
+	-- { import = "plugins.telescope" },
 	{import = "plugins.rustaceanvim"},
 	{import = "plugins.whichKey"},
 	-- For Speed
@@ -33,10 +33,10 @@ require("lazy").setup({
 	{ import = "plugins.lazyGit" },
 	{ import = "plugins.alternate-toggle"},
 	-- { import = "plugins.telescope-browser" },
-	{ import = "plugins.telescope-fzf-native" },
+	-- { import = "plugins.telescope-fzf-native" },
 	{ import = "plugins.treesitter" },
 	-- Add other plugins...
-	{ import = "plugins.session" },
+	{ import = "plugins.persistence" },
 	{ import = "plugins.oil" },
 	-- { import = "plugins.catppuccin"},
 	{ import = "dashboard.dashboard" },

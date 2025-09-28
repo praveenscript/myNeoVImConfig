@@ -1,6 +1,8 @@
 local kmap = vim.keymap.set
 
-
+vim.keymap.set("n", "<leader>ft", function()
+  require("fzf-lua").extensions.notify.notify()
+end, { desc = "Find Notifications" })
 
 local builtin = require('telescope.builtin')
 kmap('n', '<leader>lg', builtin.live_grep, {
