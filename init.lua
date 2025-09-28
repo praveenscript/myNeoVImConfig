@@ -69,11 +69,7 @@ require("utils.line_mode")
 require("utils.comments")
 require("utils.cursorJump")
 
--- Insert Mode
-vim.keymap.set("i", "<C-M-h>", "<Left>", { noremap = true, silent = true })
-vim.keymap.set("i", "<C-l>", "<Right>", { noremap = true, silent = true })
-vim.keymap.set("i", "<C-j>", "<Down>", { noremap = true, silent = true })
-vim.keymap.set("i", "<C-k>", "<Up>", { noremap = true, silent = true })
+
 -- Speed PasteLine >>
 require("utils.speedPaste")
 require("utils.stashPeek")
