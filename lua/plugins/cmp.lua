@@ -77,6 +77,13 @@ return {
     dependencies = {
       "moyiz/blink-emoji.nvim",
       "Kaiser-Yang/blink-cmp-dictionary",
+      {
+        "folke/lazydev.nvim",
+        ft = "lua",
+        config = true,
+      }
+
+
     },
     event = { "InsertEnter" },
     build = "cargo build --release",
@@ -155,7 +162,7 @@ return {
           emoji = {
             module = "blink-emoji",
             name = "Emoji",
-            score_offset = 93,      -- the higher the number, the higher the priority
+            score_offset = 93,        -- the higher the number, the higher the priority
             min_keyword_length = 2,
             opts = { insert = true }, -- Insert emoji (default) or complete its name
           },

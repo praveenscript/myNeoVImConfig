@@ -42,7 +42,7 @@ require("lazy").setup({
 	-- { import = "plugins.catppuccin"},
 	-- { import = "dashboard.dashboard" },
 	{import = "plugins.snacks"},
-	{ import = "plugins.notify" },
+	-- { import = "plugins.notify" },
 	-- For LSP Managements
 	{ import = "plugins.lspconfig" },
 	{ import = "plugins.csharplsp" },
@@ -73,7 +73,8 @@ require("lazy").setup({
 	-- { import = "plugins.indent-blankline" },
 	-- { import = "plugins.none" },
 	{ import = "plugins.diffview" },
-	{ import = "plugins.nvim-spectre" },
+	{import = "plugins.cmd"},
+	-- { import = "plugins.nvim-spectre" },
 	{ import = "plugins.nvim-dbview" },
 
 	-- Mini plugins

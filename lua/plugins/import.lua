@@ -9,7 +9,7 @@ return {
  'ibhagwan/fzf-lua',
   },
   opts = {
- picker = "telescope",
+ picker = "fzf",
   },
   keys = {
     {
