@@ -3,6 +3,9 @@ return {
 	config = function()
 		require("grug-far").setup({})
 
-		local grug = require("grug-far")
+		vim.keymap.set("n", "<leader>sr", function()
+			require("grug-far").open()
+		end, { desc = "GrugFar: open search UI" })
 	end,
 }
+
