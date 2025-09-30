@@ -15,15 +15,48 @@ return {
                 zen = { enabled = false },
                 dashboard = {
                         enabled = true,
+sections = {
+    
+
+
+
+
+      
+    
+    { section = "header"},
+    
+    {
+      section = "projects",
+      limit = 5,
+      cwd = false,
+    },
+    {
+      section = "recent_files",
+      limit = 8,
+    },
+    {
+      section = "session",
+    },
+{
+  section = "keys",
+  gap = 1, 
+  padding = 1
+}
+
+
+  },
+
+
+
 
 
                 },
                 animate = {
-                        enabled = true,
+                        enabled = false,
                         -- -@type snacks.animate.Duration|number,
-                          duration = 20, -- ms per step
-                          easing = "linear",
-                          fps = 60, -- frames per second. Global setting for all animations
+                        duration = 20,   -- ms per step
+                        easing = "linear",
+                        fps = 60,        -- frames per second. Global setting for all animations
                 },
 
                 picker = {

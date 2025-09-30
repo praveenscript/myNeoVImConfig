@@ -75,6 +75,7 @@ require("lazy").setup({
 	{ import = "plugins.diffview" },
 	{import = "plugins.cmd"},
 	{import = "plugins.grug-far"},
+	{import = "plugins.obsidian"},
 	-- { import = "plugins.nvim-spectre" },
 	{ import = "plugins.nvim-dbview" },
 
