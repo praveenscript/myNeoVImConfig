@@ -15,24 +15,24 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	-- My Own Plugins LOl
-	{import = "plugins.idleCLock"},
-	{import = "plugins.splits"},
+	{ import = "plugins.idleCLock" },
+	{ import = "plugins.splits" },
 	-- List your plugins here, or require separate files
 	-- For WebCodeBases
-	{import = "plugins.meow-yarn"},
-	{import = "plugins.arrow-navigation"},
+	{ import = "plugins.meow-yarn" },
+	{ import = "plugins.arrow-navigation" },
 	-- For webDevelopment
-	{import = "plugins.nvim-html-css"},
+	{ import = "plugins.nvim-html-css" },
 	{ import = "plugins.autoclose-tag" },
 	-- { import = "plugins.telescope" },
-	{import = "plugins.rustaceanvim"},
-	{import = "plugins.whichKey"},
+	-- {import = "plugins.rustaceanvim"},
+	{ import = "plugins.whichKey" },
 	-- For Speed
-	{import = "plugins.luaSnip"},
-	{import = "plugins.fzf"},
+	{ import = "plugins.luaSnip" },
+	{ import = "plugins.fzf" },
 	-- {import = "plugins.inputSnacks"},
 	{ import = "plugins.lazyGit" },
-	{ import = "plugins.alternate-toggle"},
+	{ import = "plugins.alternate-toggle" },
 	-- { import = "plugins.telescope-browser" },
 	-- { import = "plugins.telescope-fzf-native" },
 	{ import = "plugins.treesitter" },
@@ -41,7 +41,7 @@ require("lazy").setup({
 	{ import = "plugins.oil" },
 	-- { import = "plugins.catppuccin"},
 	-- { import = "dashboard.dashboard" },
-	{import = "plugins.snacks"},
+	{ import = "plugins.snacks" },
 	-- { import = "plugins.notify" },
 	-- For LSP Managements
 	{ import = "plugins.lspconfig" },
@@ -53,7 +53,7 @@ require("lazy").setup({
 	{ import = "plugins.rosepinemoon" },
 	{ import = "plugins.toggleterm" },
 	{ import = "plugins.cmp" },
-	{ import = "plugins.lspSignature" },
+	-- { import = "plugins.lspSignature" },
 	{ import = "plugins.dev" },
 	{ import = "plugins.rainbow" },
 	{ import = "plugins.autoclose" },
@@ -73,9 +73,9 @@ require("lazy").setup({
 	-- { import = "plugins.indent-blankline" },
 	-- { import = "plugins.none" },
 	{ import = "plugins.diffview" },
-	{import = "plugins.cmd"},
-	{import = "plugins.grug-far"},
-	{import = "plugins.obsidian"},
+	{ import = "plugins.cmd" },
+	{ import = "plugins.grug-far" },
+	{ import = "plugins.obsidian" },
 	-- { import = "plugins.nvim-spectre" },
 	{ import = "plugins.nvim-dbview" },
 

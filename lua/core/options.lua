@@ -1,5 +1,5 @@
 -- ~/.config/nvim/lua/core/options.lua
-print("✅ Loaded core/options.lua")
+-- print("✅ Loaded core/options.lua")
 -- vim.opt.number = true
 -- vim.opt.relativenumber = true
 
