@@ -8,7 +8,6 @@ commit = "658a1c29575e2f2c27e86a56867f983edeb2795e",
     require("splitwise").setup({
       create_default_keymaps = false,
     })
-
     vim.keymap.set("n", "<C-H>", require("splitwise").move_left,  { desc = "Splitwise left" })
     vim.keymap.set("n", "<C-J>", require("splitwise").move_down,  { desc = "Splitwise down" })
     vim.keymap.set("n", "<C-K>", require("splitwise").move_up,    { desc = "Splitwise up" })

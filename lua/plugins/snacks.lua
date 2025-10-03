@@ -16,12 +16,7 @@ return {
                 dashboard = {
                         enabled = true,
 sections = {
-    
 
-
-
-
-      
     
     { section = "header"},
     
