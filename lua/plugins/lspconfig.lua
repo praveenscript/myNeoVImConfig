@@ -84,7 +84,7 @@ return { -- Main LSP Configuration
 		-- 	vim.lsp.enable(server)
 		-- end
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "stylua" },
+  ensure_installed = { "lua_ls"},
 })
 require("mason-tool-installer").setup({
   ensure_installed = {
