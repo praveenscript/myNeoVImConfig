@@ -4,9 +4,9 @@ return { -- Main LSP Configuration
 		-- Automatically install LSPs and related tools to stdpath for Neovim
 		-- Mason must be loaded before its dependents so we need to set it up here.
 		-- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-		-- { "mason-org/mason.nvim", opts = {} },
-		-- "mason-org/mason-lspconfig.nvim",
-		-- "WhoIsSethDaniel/mason-tool-installer.nvim",
+		{ "mason-org/mason.nvim", opts = {} },
+		"mason-org/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 		-- Useful status updates for LSP.
 		{ "j-hui/fidget.nvim", opts = {} },
@@ -43,17 +43,17 @@ return { -- Main LSP Configuration
 					local util = require("lspconfig.util")
 					return util.find_git_ancestor(fname) or util.path.dirname(fname)
 				end,
-				-- on_attach = function(client, bufnr)
-				-- 	local bufname = vim.api.nvim_buf_get_name(bufnr)
-				-- 	if bufname:match("Luapad") or bufname:match("luapad.nvim") then
-				-- 		vim.schedule(function()
-				-- 			client.stop()
-				-- 			vim.notify("Detached lua_ls from Luapad buffer", vim.log.levels.INFO)
-				-- 		end)
-				-- 		return
-				-- 	end
-				-- 	-- Normal attach logic here (if needed)
-				-- end,
+				on_attach = function(client, bufnr)
+					local bufname = vim.api.nvim_buf_get_name(bufnr)
+					if bufname:match("Luapad") or bufname:match("luapad.nvim") then
+						vim.schedule(function()
+							client.stop()
+							vim.notify("Detached lua_ls from Luapad buffer", vim.log.levels.INFO)
+						end)
+						return
+					end
+					-- Normal attach logic here (if needed)
+				end,
 				single_file_support = true,
 				cmd = { "lua-language-server" },
 
@@ -79,9 +79,21 @@ return { -- Main LSP Configuration
 			-- jsonls = {},
 		}
 
-		for server, config in pairs(servers) do
-			vim.lsp.config(server, config)
-			vim.lsp.enable(server)
-		end
+		-- for server, config in pairs(servers) do
+		-- 	vim.lsp.config(server, config)
+		-- 	vim.lsp.enable(server)
+		-- end
+require("mason-lspconfig").setup({
+  ensure_installed = { "lua_ls", "stylua" },
+})
+require("mason-tool-installer").setup({
+  ensure_installed = {
+    "stylua", -- this installs the CLI formatter
+  },
+})
+
+
+
+
 	end,
 }
