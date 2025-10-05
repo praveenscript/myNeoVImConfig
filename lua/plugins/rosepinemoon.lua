@@ -13,12 +13,7 @@ return {
 			styles = {
 				bold = true,
 				italic = false,
-				transparency = false, -- set to true if using a transparent terminal
-			},
-
-			highlight_groups = {
-				-- Optional custom highlights (add your custom tweaks here)
-				-- Comment = { fg = "#6A9589", italic = true },
+				transparency = true, -- set to true if using a transparent terminal
 			},
 		})
 

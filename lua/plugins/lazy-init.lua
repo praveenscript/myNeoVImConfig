@@ -27,6 +27,7 @@ require("lazy").setup({
 	-- { import = "plugins.telescope" },
 	-- {import = "plugins.rustaceanvim"},
 	{ import = "plugins.whichKey" },
+	{import = "plugins.conform"},
 	-- For Speed
 	{ import = "plugins.luaSnip" },
 	{ import = "plugins.fzf" },

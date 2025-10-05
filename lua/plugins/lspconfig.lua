@@ -40,7 +40,6 @@ return { -- Main LSP Configuration
 						return nil
 					end
 
-					local util = require("lspconfig.util")
 					return util.find_git_ancestor(fname) or util.path.dirname(fname)
 				end,
 				on_attach = function(client, bufnr)
